@@ -21,6 +21,7 @@ namespace MvcTutorial.Tests.Controllers
         [TestInitialize]
         public void InitDb()
         {
+            Database.SetInitializer(new DropCreateDatabaseAlways<MvcTutorialContext>());
             db.Database.ExecuteSqlCommand("DELETE FROM Products");
         }
 
