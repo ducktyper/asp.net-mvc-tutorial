@@ -32,9 +32,20 @@ namespace MvcTutorial.Tests.Models
             }
         }
 
+        [TestMethod]
+        public void TestNumberOfRooms_Required()
+        {
+            var model = ValidHouse();
+            model.NumberOfRooms = null;
+            AssertValidation("The NumberOfRooms field is required.", model);
+        }
+
         private House ValidHouse()
         {
-            return new House();
+            return new House()
+            {
+                NumberOfRooms = 3
+            };
         }
 
         private void AssertValidation(string message, Object model)

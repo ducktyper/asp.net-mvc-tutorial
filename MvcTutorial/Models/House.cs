@@ -8,5 +8,7 @@ namespace MvcTutorial.Models
 {
     public class House
     {
+        [Required]
+        public int? NumberOfRooms { get; set; }
     }
 }
