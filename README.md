@@ -14,7 +14,8 @@ This repository contains branch based tutorials. Each small task is represented 
 ## Tutorials
 1. Create a new MVC project [mvc-init](https://github.com/ducktyper/asp.net-mvc-tutorial/commits/mvc-init)
 2. Scaffolding [scaffold-products](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/mvc-init...scaffold-products)
-3. Use migrations [Code-First-Migrations](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/scaffold-products...code-first-migrations)
+3. Use migrations [code-first-migrations](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/scaffold-products...code-first-migrations)
 4. Add a new field to a model [add-field](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/code-first-migrations...add-field)
 5. Test a scaffolded controller [test-scaffold](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/scaffold-products...test-scaffold)
-6. Add validations [add-validation](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/test-scaffold...add-validation)
+6. Add a validation [add-validation](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/test-scaffold...add-validation)
+7. Customize validation messages [validation-custom-message](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/add-validation..validation-custom-message)
