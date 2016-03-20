@@ -22,7 +22,7 @@ namespace MvcTutorial.Tests.Models
         public void TestNameRequired()
         {
             var model = new Product();
-            AssertValidation("Name is required!", model);
+            AssertValidation("Label is required!", model);
         }
 
         private void AssertValidation(string message, Object model)
