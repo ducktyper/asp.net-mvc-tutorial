@@ -17,6 +17,26 @@ namespace MvcTutorial.Tests.Models
             Thread.CurrentThread.CurrentCulture = ci;
         }
 
+        [TestMethod]
+        public void TestValidHouse()
+        {
+            var model = ValidHouse();
+            var context = new ValidationContext(model);
+            try
+            {
+                Validator.ValidateObject(model, context);
+            }
+            catch (ValidationException ext)
+            {
+                Assert.Fail(ext.Message);
+            }
+        }
+
+        private House ValidHouse()
+        {
+            return new House();
+        }
+
         private void AssertValidation(string message, Object model)
         {
             var context = new ValidationContext(model);
