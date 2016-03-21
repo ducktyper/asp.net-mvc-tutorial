@@ -9,6 +9,7 @@ namespace MvcTutorial.Models
     public class House
     {
         [Required]
+        [Range(1, 100)]
         public int? NumberOfRooms { get; set; }
     }
 }
