@@ -30,7 +30,7 @@ namespace MvcTutorial.Tests.Models
             var context = new ValidationContext(model);
             try
             {
-                Validator.ValidateObject(model, context);
+                Validator.ValidateObject(model, context, true);
             }
             catch (ValidationException ext)
             {
