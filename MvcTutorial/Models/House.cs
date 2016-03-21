@@ -13,6 +13,7 @@ namespace MvcTutorial.Models
         public int? NumberOfRooms { get; set; }
 
         [Required]
+        [StringLength(10)]
         public string Road { get; set; }
     }
 }

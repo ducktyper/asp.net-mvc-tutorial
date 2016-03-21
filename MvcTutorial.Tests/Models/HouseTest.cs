@@ -56,6 +56,14 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("The Road field is required.", model);
         }
 
+        [TestMethod]
+        public void TestRoad_StringLength()
+        {
+            var model = ValidHouse();
+            model.Road = "aaaa aaaa aaaa aaaa rd";
+            AssertValidation("The field Road must be a string with a maximum length of 10.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
