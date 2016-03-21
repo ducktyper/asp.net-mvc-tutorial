@@ -64,6 +64,14 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("The field Road must be a string with a maximum length of 10.", model);
         }
 
+        [TestMethod]
+        public void TestRoad_RegularExpression()
+        {
+            var model = ValidHouse();
+            model.Road = "no road";
+            AssertValidation("The field Road must match the regular expression '[1-9a-zA-Z- ]+ rd'.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
