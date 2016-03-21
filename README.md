@@ -19,3 +19,4 @@ This repository contains branch based tutorials. Each small task is represented 
 5. Test a scaffolded controller [test-scaffold](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/scaffold-products...test-scaffold)
 6. Add a validation [add-validation](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/test-scaffold...add-validation)
 7. Customize validation messages [validation-custom-message](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/add-validation...validation-custom-message)
+8. Use native validations [native-validations](https://github.com/ducktyper/asp.net-mvc-tutorial/compare/mvc-init...native-validations)
