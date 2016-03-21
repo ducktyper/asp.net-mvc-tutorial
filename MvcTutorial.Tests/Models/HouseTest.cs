@@ -48,11 +48,20 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("The field NumberOfRooms must be between 1 and 100.", model);
         }
 
+        [TestMethod]
+        public void TestRoad_Required()
+        {
+            var model = ValidHouse();
+            model.Road = null;
+            AssertValidation("The Road field is required.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
             {
-                NumberOfRooms = 3
+                NumberOfRooms = 3,
+                Road          = "1 Queen St"
             };
         }
 

@@ -11,5 +11,8 @@ namespace MvcTutorial.Models
         [Required]
         [Range(1, 100)]
         public int? NumberOfRooms { get; set; }
+
+        [Required]
+        public string Road { get; set; }
     }
 }
