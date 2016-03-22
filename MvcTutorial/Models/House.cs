@@ -15,6 +15,7 @@ namespace MvcTutorial.Models
         [Required]
         [StringLength(10)]
         [RegularExpression(@"[1-9a-zA-Z- ]+ rd")]
+        [MinLength(5)]
         public string Road { get; set; }
     }
 }

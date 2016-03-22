@@ -72,6 +72,14 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("The field Road must match the regular expression '[1-9a-zA-Z- ]+ rd'.", model);
         }
 
+        [TestMethod]
+        public void TestRoad_MinLength()
+        {
+            var model = ValidHouse();
+            model.Road = "a rd";
+            AssertValidation("The field Road must be a string or array type with a minimum length of '5'.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
