@@ -17,5 +17,8 @@ namespace MvcTutorial.Models
         [RegularExpression(@"[1-9a-zA-Z- ]+ rd")]
         [MinLength(5)]
         public string Road { get; set; }
+
+        [Phone]
+        public string PhoneNumber { get; set; }
     }
 }

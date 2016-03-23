@@ -80,12 +80,21 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("The field Road must be a string or array type with a minimum length of '5'.", model);
         }
 
+        [TestMethod]
+        public void TestPhoneNumber()
+        {
+            var model = ValidHouse();
+            model.PhoneNumber = "invalid phone number";
+            AssertValidation("The PhoneNumber field is not a valid phone number.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
             {
                 NumberOfRooms = 3,
-                Road          = "1 Queen rd"
+                Road          = "1 Queen rd",
+                PhoneNumber   = "+64-(0)9-111-1111"
             };
         }
 
