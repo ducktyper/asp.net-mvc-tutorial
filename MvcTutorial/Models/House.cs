@@ -26,5 +26,8 @@ namespace MvcTutorial.Models
 
         [CreditCard]
         public string OwnerCreditCard { get; set; }
+
+        [Compare("OwnerCreditCard")]
+        public string ConfirmOwnerCreditCard { get; set; }
     }
 }

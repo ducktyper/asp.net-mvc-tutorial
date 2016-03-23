@@ -104,6 +104,14 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("The OwnerCreditCard field is not a valid credit card number.", model);
         }
 
+        [TestMethod]
+        public void TestConfirmOwnerCreditCard_Compare()
+        {
+            var model = ValidHouse();
+            model.ConfirmOwnerCreditCard = "1111111111111111";
+            AssertValidation("'ConfirmOwnerCreditCard' and 'OwnerCreditCard' do not match.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
@@ -112,7 +120,8 @@ namespace MvcTutorial.Tests.Models
                 Road          = "1 Queen rd",
                 PhoneNumber   = "+64-(0)9-111-1111",
                 OwnerEmail    = "ducktyper@gmail.com",
-                OwnerCreditCard = "0000000000000000"
+                OwnerCreditCard = "0000000000000000",
+                ConfirmOwnerCreditCard = "0000000000000000"
             };
         }
 
