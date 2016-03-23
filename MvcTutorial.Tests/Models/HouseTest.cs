@@ -85,7 +85,7 @@ namespace MvcTutorial.Tests.Models
             return new House()
             {
                 NumberOfRooms = 3,
-                Road          = "1 Queen St"
+                Road          = "1 Queen rd"
             };
         }
 
