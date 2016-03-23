@@ -20,5 +20,8 @@ namespace MvcTutorial.Models
 
         [Phone]
         public string PhoneNumber { get; set; }
+
+        [EmailAddress]
+        public string OwnerEmail { get; set; }
     }
 }

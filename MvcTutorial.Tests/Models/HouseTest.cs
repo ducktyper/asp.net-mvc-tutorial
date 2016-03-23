@@ -88,13 +88,22 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("The PhoneNumber field is not a valid phone number.", model);
         }
 
+        [TestMethod]
+        public void TestOwnerEmail()
+        {
+            var model = ValidHouse();
+            model.OwnerEmail = "invalid email";
+            AssertValidation("The OwnerEmail field is not a valid e-mail address.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
             {
                 NumberOfRooms = 3,
                 Road          = "1 Queen rd",
-                PhoneNumber   = "+64-(0)9-111-1111"
+                PhoneNumber   = "+64-(0)9-111-1111",
+                OwnerEmail    = "ducktyper@gmail.com"
             };
         }
 
