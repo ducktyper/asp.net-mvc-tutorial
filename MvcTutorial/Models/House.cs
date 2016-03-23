@@ -23,5 +23,8 @@ namespace MvcTutorial.Models
 
         [EmailAddress]
         public string OwnerEmail { get; set; }
+
+        [CreditCard]
+        public string OwnerCreditCard { get; set; }
     }
 }
