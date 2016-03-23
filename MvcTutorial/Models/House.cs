@@ -34,5 +34,8 @@ namespace MvcTutorial.Models
 
         [EnumDataType(typeof(HouseType))]
         public HouseType HouseType { get; set; }
+
+        [Url]
+        public string OwnerWebsite { get; set; }
     }
 }

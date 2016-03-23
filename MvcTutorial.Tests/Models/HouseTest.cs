@@ -120,6 +120,14 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("The field HouseType is invalid.", model);
         }
 
+        [TestMethod]
+        public void TestOwnerWebsite_Url()
+        {
+            var model = ValidHouse();
+            model.OwnerWebsite = "Invalid URL";
+            AssertValidation("The OwnerWebsite field is not a valid fully-qualified http, https, or ftp URL.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
@@ -130,7 +138,8 @@ namespace MvcTutorial.Tests.Models
                 OwnerEmail    = "ducktyper@gmail.com",
                 OwnerCreditCard = "0000000000000000",
                 ConfirmOwnerCreditCard = "0000000000000000",
-                HouseType = HouseType.Apartment
+                HouseType = HouseType.Apartment,
+                OwnerWebsite = "goodhouse.com"
             };
         }
 
