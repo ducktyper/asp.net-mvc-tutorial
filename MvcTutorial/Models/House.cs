@@ -6,6 +6,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MvcTutorial.Models
 {
+    public enum HouseType { Apartment, House, Townhouse, Unit }
+
     public class House
     {
         [Required]
@@ -29,5 +31,8 @@ namespace MvcTutorial.Models
 
         [Compare("OwnerCreditCard")]
         public string ConfirmOwnerCreditCard { get; set; }
+
+        [EnumDataType(typeof(HouseType))]
+        public HouseType HouseType { get; set; }
     }
 }

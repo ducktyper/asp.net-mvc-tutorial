@@ -112,6 +112,14 @@ namespace MvcTutorial.Tests.Models
             AssertValidation("'ConfirmOwnerCreditCard' and 'OwnerCreditCard' do not match.", model);
         }
 
+        [TestMethod]
+        public void TestHouseType_Enum()
+        {
+            var model = ValidHouse();
+            model.HouseType = (HouseType)1000; // Invalid house type
+            AssertValidation("The field HouseType is invalid.", model);
+        }
+
         private House ValidHouse()
         {
             return new House()
@@ -121,7 +129,8 @@ namespace MvcTutorial.Tests.Models
                 PhoneNumber   = "+64-(0)9-111-1111",
                 OwnerEmail    = "ducktyper@gmail.com",
                 OwnerCreditCard = "0000000000000000",
-                ConfirmOwnerCreditCard = "0000000000000000"
+                ConfirmOwnerCreditCard = "0000000000000000",
+                HouseType = HouseType.Apartment
             };
         }
 
