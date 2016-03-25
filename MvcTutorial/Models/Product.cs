@@ -15,6 +15,11 @@ namespace MvcTutorial.Models
 
     public class ProductKeyAttribute: ValidationAttribute
     {
+        public ProductKeyAttribute()
+        {
+            ErrorMessage = "The field {0} must be of format xxxx-xxxx-xxxx-xxxx.";
+        }
+
         public override bool IsValid(object value)
         {
             return (

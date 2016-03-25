@@ -37,7 +37,7 @@ namespace MvcTutorial.Tests.Models
         {
             var product = ValidProduct();
             product.ProductKey = "invalid key";
-            AssertValidation("The field ProductKey is invalid.", product);
+            AssertValidation("The field ProductKey must be of format xxxx-xxxx-xxxx-xxxx.", product);
         }
 
         private Product ValidProduct()
