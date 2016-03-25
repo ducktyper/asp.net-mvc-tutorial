@@ -13,6 +13,8 @@ namespace MvcTutorial.Models
         [ProductKey]
         public string ProductKey { get; set; }
         public int ManufactureYear { get; set; }
+        [ProductNamePrefix("AA-")]
+        public string ProductName { get; set; }
     }
 
     public class ProductKeyAttribute: ValidationAttribute
@@ -28,6 +30,21 @@ namespace MvcTutorial.Models
                 value is string &&
                 new Regex("^\\d{4}-\\d{4}-\\d{4}-\\d{4}$").IsMatch((string)value)
             );
+        }
+    }
+
+    public class ProductNamePrefixAttribute: ValidationAttribute
+    {
+        private string prefix;
+
+        public ProductNamePrefixAttribute(string _prefix)
+        {
+            prefix = _prefix;
+        }
+
+        public override bool IsValid(object value)
+        {
+            return value is string && (value as string).StartsWith(prefix);
         }
     }
 

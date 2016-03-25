@@ -41,6 +41,14 @@ namespace MvcTutorial.Tests.Models
         }
 
         [TestMethod]
+        public void TestProductName_Prefix()
+        {
+            var product = ValidProduct();
+            product.ProductName = "Engine";
+            AssertValidation("The field ProductName is invalid.", product);
+        }
+
+        [TestMethod]
         public void TestManufactureYearIsFirstFourDigitsOfProductKey()
         {
             var product = ValidProduct();
@@ -52,7 +60,8 @@ namespace MvcTutorial.Tests.Models
         {
             return new Product() {
                 ProductKey = "2016-0000-0000-0000",
-                ManufactureYear = 2016
+                ManufactureYear = 2016,
+                ProductName = "AA-Engine"
             };
         }
 
