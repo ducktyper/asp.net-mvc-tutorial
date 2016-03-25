@@ -7,10 +7,12 @@ using System.Web;
 
 namespace MvcTutorial.Models
 {
+    [ManufactureYearIsFirstFourDigitsOfProductKey]
     public class Product
     {
         [ProductKey]
         public string ProductKey { get; set; }
+        public int ManufactureYear { get; set; }
     }
 
     public class ProductKeyAttribute: ValidationAttribute
@@ -26,6 +28,15 @@ namespace MvcTutorial.Models
                 value is string &&
                 new Regex("^\\d{4}-\\d{4}-\\d{4}-\\d{4}$").IsMatch((string)value)
             );
+        }
+    }
+
+    public class ManufactureYearIsFirstFourDigitsOfProductKeyAttribute: ValidationAttribute
+    {
+        public override bool IsValid(object value)
+        {
+            var p = value as Product;
+            return p != null && p.ProductKey.Substring(0, 4) == p.ManufactureYear.ToString();
         }
     }
 }

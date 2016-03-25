@@ -36,14 +36,23 @@ namespace MvcTutorial.Tests.Models
         public void TestProductKey()
         {
             var product = ValidProduct();
-            product.ProductKey = "invalid key";
+            product.ProductKey = "2016-invalid key";
             AssertValidation("The field ProductKey must be of format xxxx-xxxx-xxxx-xxxx.", product);
+        }
+
+        [TestMethod]
+        public void TestManufactureYearIsFirstFourDigitsOfProductKey()
+        {
+            var product = ValidProduct();
+            product.ManufactureYear = 2015;
+            AssertValidation("The field Product is invalid.", product);
         }
 
         private Product ValidProduct()
         {
             return new Product() {
-                ProductKey = "0000-0000-0000-0000"
+                ProductKey = "2016-0000-0000-0000",
+                ManufactureYear = 2016
             };
         }
 
