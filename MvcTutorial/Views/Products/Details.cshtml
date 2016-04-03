@@ -27,6 +27,13 @@
         </dd>
 
     </dl>
+
+    <h4>Reviews</h4>
+    <hr />
+    @foreach (var review in Model.Reviews)
+    {
+        <p>@review.Content</p>
+    }
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
